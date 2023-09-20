@@ -41,7 +41,7 @@ class NewsController extends Controller
             $truck->title = $request->input('title');
             $truck->description = $request->input('description');
             $truck->content = $request->input('content');
-            
+            $truck->content = $new_name;
             $truck->save();
         }else{
             $truck = new News([
@@ -65,13 +65,10 @@ class NewsController extends Controller
 
     public function destroy($id)
     {
-        $truck = News::find($id);
-
-
-    // Delete the truck
-    $truck->delete();    
-    $trucks = News::all();
-    return redirect('news-list')->with('success', 'Data Updated successfully.');
-    // return view('auth.admin_register',compact('trucks'));
+        $news = News::find($id);
+        $news->delete();    
+        $news = News::all();
+        return redirect('news-list')->with('success', 'Data Updated successfully.');
+    
     }
 }
