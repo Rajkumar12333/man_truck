@@ -297,6 +297,21 @@
           <span>Dashboard</span>
         </a>
       </li><!-- End Dashboard Nav -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-menu-button-wide"></i><span>News</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+      
+          <li>
+            <a href="{{ route('news-list') }}" class="active">
+              <i class="bi bi-circle"></i><span>All News</span>
+            </a>
+          </li>
+          
+          
+        </ul>
+      </li><!-- End Components Nav -->
 
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
@@ -305,7 +320,7 @@
         <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
       
           <li>
-            <a href="components-alerts.html" class="active">
+            <a href="{{ route('truck-list') }}" class="active">
               <i class="bi bi-circle"></i><span>All Models</span>
             </a>
           </li>
